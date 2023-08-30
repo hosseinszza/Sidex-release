@@ -1,0 +1,531 @@
+
+<CoreApp>:
+    cols: 4
+    padding: 20
+	spacing: 20
+	GridLayout:
+	    rows:4
+	    padding: 20
+	    canvas.before:
+            Color:
+                rgba: root.colorborder
+            Line:
+                width: 1.5
+                rectangle: self.x, self.y, self.width, self.height
+        Label:
+            text:"Master & Connection"
+            size_hint_y:0.1
+        BoxLayout:
+            orientation:'horizontal'
+            Label:
+                text:"Computer Connection:"
+                halign:"right"
+                valign:"center"
+                text_size: self.size
+            Image:
+                source:"OK.png" if root.connComp else "fault.png"
+                size_hint_x:0.15
+            Label:
+                size_hint_x:0.6
+
+
+
+        GridLayout:
+            cols:3
+            spacing:sp(10)
+            BoxLayout:
+                orientation:'horizontal'
+                size_hint_x:0.2
+                TextInput:
+                    id:id_mas_elev
+                    text:"1"
+                    hint_text:"elevator id"
+                    size_hint: (0.2, None)
+                    height: 30
+                    pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+            BoxLayout:
+                orientation:'horizontal'
+                Label:
+                    text:"Elevator Connection:"
+                    halign:"right"
+                    valign:"center"
+                    text_size: self.size
+
+                Label:
+                    size_hint_x:0.25
+                    halign:"left"
+                    valign:"center"
+                    text_size: self.size
+                    text:str(root.MasElevConn)+"%"
+                    color:root.colorOK if root.MasElevConn==100 else root.colorerror
+                    opacity:int(root.check[0])
+
+                Button:
+                    size_hint_x:0.5
+                    text:"check"
+                    hint_text:"elevator id"
+                    size_hint: (0.4, None)
+                    height: 30
+                    pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+                    on_press:root.checkConnElev()
+
+
+
+        GridLayout:
+            cols:2
+            spacing:sp(10)
+            BoxLayout:
+                orientation:'horizontal'
+                size_hint_x:0.2
+                TextInput:
+                    id:id_mas_hall
+                    text:"1"
+                    hint_text:"hall id"
+                    size_hint: (0.2, None)
+                    height: 30
+                    pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+            BoxLayout:
+                orientation:'horizontal'
+                Label:
+                    text:"Hall Connection:"
+                    halign:"right"
+                    valign:"center"
+                    text_size: self.size
+
+                Label:
+                    size_hint_x:0.25
+                    halign:"left"
+                    valign:"center"
+                    text_size: self.size
+                    text:str(root.MasHallConn)+"%"
+                    color:root.colorOK if root.MasHallConn==100 else root.colorerror
+                    opacity:int(root.check[1])
+                Button:
+                    size_hint_x:0.25
+                    text:"check"
+                    hint_text:"elevator id"
+                    size_hint: (0.4, None)
+                    height: 30
+                    pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+                    on_press:root.checkConnHall()
+
+
+
+    GridLayout:
+	    rows:5
+	    padding: 20
+	    size_hint_x:1
+	    canvas.before:
+            Color:
+                rgba: root.colorborder
+            Line:
+                width: 1.5
+                rectangle: self.x, self.y, self.width, self.height
+        Label:
+            text:"Monitoring"
+            size_hint_y:0.1
+        BoxLayout:
+            orientation:'horizontal'
+            Label:
+                text:"Connection:"
+                halign:"right"
+                valign:"center"
+                text_size: self.size
+            Label:
+                halign:"left"
+                valign:"center"
+                text_size: self.size
+                text:str(root.MonComm)+"%"
+
+        BoxLayout:
+            orientation:'horizontal'
+            Label:
+                text:"GSM Initial:"
+                halign:"right"
+                valign:"center"
+                text_size: self.size
+            Image:
+                source:"OK.png" if root.gsminitial else "fault.png"
+                size_hint_x:0.15
+
+            Label:
+                size_hint_x:0.6
+        BoxLayout:
+            orientation:'horizontal'
+            Label:
+                text:"GSM SIM Card:"
+                halign:"right"
+                valign:"center"
+                text_size: self.size
+            Image:
+                source:"OK.png" if root.gsmsimcard else "fault.png"
+                size_hint_x:0.15
+
+            Label:
+                size_hint_x:0.6
+
+        BoxLayout:
+            orientation:'horizontal'
+            Label:
+                text:"GSM Internet:"
+                halign:"right"
+                valign:"center"
+                text_size: self.size
+            Image:
+                source:"OK.png" if root.gsminternet else "fault.png"
+                size_hint_x:0.15
+
+            Label:
+                size_hint_x:0.6
+            
+
+
+
+    GridLayout:
+	    rows:8
+	    padding: 20
+	    canvas.before:
+            Color:
+                rgba: root.colorborder
+            Line:
+                width: 1.5
+                rectangle: self.x, self.y, self.width, self.height
+
+        Label:
+            text:"Elevator"
+            size_hint_y:0.2
+
+        BoxLayout:
+            orientation:'horizontal'
+            Label:
+                text:"Dip Switch:"
+                halign:"right"
+                valign:"center"
+                text_size: self.size
+
+            Image:
+                source:"OK.png" if root.dipelev[0] else "fault.png"
+                size_hint_x:0.15
+                opacity:int(root.check[2])
+            Image:
+                source:"OK.png" if root.dipelev[1] else "fault.png"
+                size_hint_x:0.15
+                opacity:int(root.check[2])
+            Label:
+                size_hint_x:0.2
+            Button:
+                text:root.butt_dip_elev
+                size_hint: (0.8, None)
+                height: 30
+                pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+                on_press:root.dipswitchelev()
+        BoxLayout:
+            orientation:'horizontal'
+            Label:
+                text:"Connection:"
+                halign:"right"
+                valign:"center"
+                text_size: self.size
+            Label:
+                halign:"left"
+                valign:"center"
+                text_size: self.size
+                text:str(root.connelev)+"%"
+                color:root.colorOK if root.connelev==100 else root.colorerror
+                opacity:int(root.check[3])
+            Button:
+                text:"Check(id=15)"
+                size_hint: (0.85, None)
+                height: 30
+                pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+                on_press:root.connectionelevator()
+        BoxLayout:
+            orientation:'horizontal'
+
+            Button:
+                text:"Calls All High"
+                size_hint: (0.4, None)
+                height: 30
+                pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+                on_press:root.CallAllHigh();
+            Button:
+                text:"Calls All Low"
+                size_hint: (0.4, None)
+                height: 30
+                pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+                on_press:root.CallAllLow();
+
+        BoxLayout:
+            orientation:'horizontal'
+            TextInput:
+                id:cnt_calls
+                text:"10"
+                hint_text:"Cnt Calls"
+                size_hint: (0.4, None)
+                height: 30
+                pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+            Label:
+                text:"Calls Read:"
+                halign:"right"
+                valign:"center"
+                text_size: self.size
+            Label:
+                halign:"left"
+                valign:"center"
+                text_size: self.size
+                text:"OK" if root.state_hall_read else root.fail_hall_read
+                color:root.colorOK if root.state_hall_read else root.colorerror
+                opacity:int(root.check[4])
+            Button:
+                text:"Check"
+                size_hint: (0.6, None)
+                height: 30
+                pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+                on_press:root.CallsReadElevator()
+        BoxLayout:
+            orientation:'horizontal'
+            TextInput:
+                id:cnt_segment
+                text:"9"
+                hint_text:"Cnt Segments"
+                size_hint: (0.4, None)
+                height: 30
+                pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+            Label:
+                text:"Segment Read:"
+                halign:"right"
+                valign:"center"
+                text_size: self.size
+            Label:
+                halign:"left"
+                valign:"center"
+                text_size: self.size
+                text:"OK" if root.state_seg_read else root.fail_seg_read
+                color:root.colorOK if root.state_seg_read else root.colorerror
+                opacity:int(root.check[5])
+            Button:
+                text:"Check"
+                size_hint: (0.6, None)
+                height: 30
+                pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+                on_press:root.SegmentReadElevator()
+        BoxLayout:
+            orientation:'horizontal'
+
+            Label:
+                text:"Direction:"
+                halign:"right"
+                valign:"center"
+                text_size: self.size
+            Image:
+                source:"OK.png" if root.direlev[0] else "fault.png"
+                size_hint_x:0.15
+                opacity:int(root.check[6])
+            Image:
+                source:"OK.png" if root.direlev[1] else "fault.png"
+                size_hint_x:0.15
+                opacity:int(root.check[6])
+
+            Label:
+                size_hint_x:0.2
+            Button:
+                text:"Check"
+                size_hint: (0.6, None)
+                height: 30
+                pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+                on_press:root.DirectionElevatorTest()
+        BoxLayout:
+            orientation:'horizontal'
+            Label:
+                text:"Door Signal:"
+                halign:"right"
+                valign:"center"
+                text_size: self.size
+            Image:
+                source:"OK.png" if root.doorcheck else "fault.png"
+                size_hint_x:0.15
+                opacity:int(root.check[7])
+            Label:
+                size_hint_x:0.2
+            Button:
+                text:"Check"
+                size_hint: (0.4, None)
+                height: 30
+                pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+                on_press:root.DoorElevatorTest()
+
+
+
+
+    GridLayout:
+	    rows:9
+	    padding: 20
+	    canvas.before:
+            Color:
+                rgba: root.colorborder
+            Line:
+                width: 1.5
+                rectangle: self.x, self.y, self.width, self.height
+        Label:
+            text:"Hall"
+            size_hint_y:0.2
+        BoxLayout:
+            orientation:'horizontal'
+            Label:
+                text:"Dip Switch:"
+                halign:"right"
+                valign:"center"
+                text_size: self.size
+
+            Image:
+                source:"OK.png" if root.diphall[0] else "fault.png"
+                size_hint_x:0.15
+                opacity:int(root.check[8])
+            Image:
+                source:"OK.png" if root.diphall[1] else "fault.png"
+                size_hint_x:0.15
+                opacity:int(root.check[8])
+
+            Label:
+                size_hint_x:0.2
+            Button:
+                text:root.butt_dip_hall
+                size_hint: (1.4, None)
+                height: 30
+                pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+                on_press:root.dipswitchhall()
+        BoxLayout:
+            orientation:'horizontal'
+            Label:
+                text:"Connection:"
+                halign:"right"
+                valign:"center"
+                text_size: self.size
+            Label:
+                halign:"left"
+                valign:"center"
+                text_size: self.size
+                text:str(root.connhall)+"%"
+                color:root.colorOK if root.connhall==100 else root.colorerror
+                opacity:int(root.check[9])
+            Button:
+                text:"Check (id=63 parid=0)"
+                size_hint: (1.7, None)
+                height: 30
+                pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+                on_press:root.connectionhall()
+
+        BoxLayout:
+            orientation:'horizontal'
+            Button:
+                text:"Floors All High"
+                size_hint: (0.4, None)
+                height: 30
+                pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+                on_press:root.FloorAllHigh()
+            Button:
+                text:"Floors All Low"
+                size_hint: (0.4, None)
+                height: 30
+                pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+                on_press:root.FloorAllLow()
+
+        BoxLayout:
+            orientation:'horizontal'
+            TextInput:
+                id:cnt_floors
+                text:"10"
+                hint_text:"Cnt Floors"
+                size_hint: (0.4, None)
+                height: 30
+                pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+
+
+            Label:
+                text:"Floors Read:"
+                halign:"right"
+                valign:"center"
+                text_size: self.size
+            Label:
+                halign:"left"
+                valign:"center"
+                text_size: self.size
+                text:"OK" if root.state_floor_read else root.fail_floor_read
+                color:root.colorOK if root.state_floor_read else root.colorerror
+                opacity:int(root.check[10])
+            Button:
+                text:"check"
+                size_hint: (0.6, None)
+                height: 30
+                pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+                on_press:root.FloorsRead()
+
+        BoxLayout:
+            orientation:'horizontal'
+            TextInput:
+                id:cnt_people
+                text:"5"
+                hint_text:"Cnt people"
+                size_hint: (0.4, None)
+                height: 30
+                pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+
+
+            Label:
+                text:"People Read:"
+                halign:"right"
+                valign:"center"
+                text_size: self.size
+            Label:
+                halign:"left"
+                valign:"center"
+                text_size: self.size
+                text:"OK" if root.state_people_read else root.fail_people_read
+                color:root.colorOK if root.state_people_read else root.colorerror
+                opacity:int(root.check[11])
+            Button:
+                text:"check"
+                size_hint: (0.6, None)
+                height: 30
+                pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+                on_press:root.PeopleRead()
+
+
+
+        BoxLayout:
+            orientation:'horizontal'
+
+            Button:
+                text:"Direction Left"
+                size_hint: (0.4, None)
+                height: 30
+                pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+                on_press:root.DirectionLeftHall()
+            Button:
+                text:"Direction Right"
+                size_hint: (0.4, None)
+                height: 30
+                pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+                on_press:root.DirectionRightHall()
+        BoxLayout:
+            orientation:'horizontal'
+            Label:
+                text:"ID Card:"
+                halign:"right"
+                valign:"center"
+                text_size: self.size
+            Image:
+                source:"OK.png" if root.idcard[0] else "fault.png"
+                size_hint_x:0.15
+                opacity:int(root.check[12])
+
+            Label:
+                size_hint_x:0.4
+            Button:
+                text:"Check ID CARD"
+                size_hint: (1.2, None)
+                height: 30
+                pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+                on_press:root.testidcard()
+
+

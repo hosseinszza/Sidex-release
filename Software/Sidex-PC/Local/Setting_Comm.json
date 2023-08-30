@@ -1,0 +1,264 @@
+[
+  {
+        "type": "string",
+        "title": "Project Name",
+        "desc": "Project Name",
+        "section": "Master",
+        "key": "PrjName"
+    },
+  {
+        "type": "string",
+        "title": "Employer",
+        "desc": "Employer Name",
+        "section": "Master",
+        "key": "employer"
+    },
+  {
+        "type": "string",
+        "title": "Employer Phone ",
+        "desc": "Employer Phone Number",
+        "section": "Master",
+        "key": "employernum"
+    },
+  {
+        "type": "string",
+        "title": "Hardware Version",
+        "desc": "Project Hardware Version",
+        "section": "Master",
+        "key": "version"
+    },
+  {
+        "type": "string",
+        "title": "Start Date",
+        "desc": "Project Start Date",
+        "section": "Master",
+        "key": "startdate"
+    },
+  {
+        "type": "string",
+        "title": "Installation Date",
+        "desc": "Project Install Date",
+        "section": "Master",
+        "key": "installdate"
+    },
+  {
+        "type": "bool",
+        "title": "Auto Config Change",
+        "desc": "Auto Config Change",
+        "section": "Master",
+        "key": "autoconfig"
+    },
+  {
+        "type": "string",
+        "title": "GSM Phone",
+        "desc": "GSM Phone Number",
+        "section": "Master",
+        "key": "gsmphone"
+    },
+  {
+        "type": "numeric",
+        "title": "GSM Password",
+        "desc": "GSM Password For Check Internet",
+        "section": "Master",
+        "key": "gsmpassword"
+    },
+  {
+        "type": "bool",
+        "title": "Enable SMS",
+        "desc": "Enable SMS For This Project",
+        "section": "Master",
+        "key": "enablesms"
+    },
+  {
+        "type": "bool",
+        "title": "Enable PHC",
+        "desc": "Enable PHC",
+        "section": "Master",
+        "key": "enablephc"
+    },
+   {
+        "type": "numeric",
+        "title": "People Case ",
+        "desc": "People Number for every request [1-25]",
+        "section": "Master",
+        "key": "people"
+    },
+   {
+        "type": "numeric",
+        "title": "Time Rest ",
+        "desc": "Time For opening and closing door and get in passengers in Second [1-120]",
+        "section": "Master",
+        "key": "timerest"
+    },
+   {
+        "type": "numeric",
+        "title": "Cnt Door Reopen",
+        "desc": "Cnt Number Reopen Door[1-10]",
+        "section": "Master",
+        "key": "beta1"
+    }
+   , {
+        "type": "numeric",
+        "title": "Waiting Time Max/Min Floor",
+        "desc": "Waiting Time Request Max/Min Floor  in Minute[1-10]",
+        "section": "Master",
+        "key": "beta2"
+    },
+   {
+        "type": "numeric",
+        "title": "VIP Person Elevator",
+        "desc": "Index Number Elevator For VIP Preson [1-4]",
+        "section": "Master",
+        "key": "beta3"
+    },
+  {
+        "type": "numeric",
+        "title": "Max Deviation Floor",
+        "desc": "Max Devation Number Floor [1-10][1-10]",
+        "section": "Master",
+        "key": "beta4"
+    },
+   {
+        "type": "numeric",
+        "title": "Check Time",
+        "desc": "Check Time in ms [5-50]",
+        "section": "Master",
+        "key": "checktime"
+    },
+  {
+        "type": "bool",
+        "title": "Enable Panel Screen",
+        "desc": "Enable Panel Screen",
+        "section": "Master",
+        "key": "doublexmove"
+    }
+   ,
+     {
+        "type": "numeric",
+        "title": "Timeout Fault Elevator",
+        "desc": "Timeout Fault Elevator [0-50]",
+        "section": "Master",
+        "key": "maxcntreq"
+    }
+   ,
+   {
+        "type": "numeric",
+        "title": "Time Wait",
+        "desc": "Time Wait For next command in ms[5-50]",
+        "section": "Master",
+        "key": "timewait"
+    },
+  {
+        "type": "numeric",
+        "title": "WheelChair Add",
+        "desc": "WheelChair Add People [2-4]",
+        "section": "Master",
+        "key": "wheelchair"
+    },
+  {
+        "type": "bool",
+        "title": "Check Segment Fault",
+        "desc": "Check Segment Fault",
+        "section": "Master",
+        "key": "crowded"
+    },
+  {
+        "type": "numeric",
+        "title": "Time Show Hall ",
+        "desc": "Time for show index elevator in second[2-20]",
+        "section": "Master",
+        "key": "timeshow"
+    },
+  {
+        "type": "numeric",
+        "title": "Arrival Time ",
+        "desc": "Time for stand in front of farthest panel[2-10]",
+        "section": "Master",
+        "key": "arrivaltime"
+    },
+  {
+        "type": "numeric",
+        "title": "Delay Connection ",
+        "desc": "Delay Connection In Hall Panels in ms[10-100]",
+        "section": "Master",
+        "key": "maxwait"
+    },
+  {
+        "type": "bool",
+        "title": "Enable Home",
+        "desc": "Enable Home",
+        "section": "Master",
+        "key": "enablehome"
+    },
+  {
+        "type": "numeric",
+        "title": "Home Time ",
+        "desc": "Time Wait For Request Home in minutes[1-40]",
+        "section": "Master",
+        "key": "hometime"
+    },
+  {
+        "type": "numeric",
+        "title": "Max Differance command ",
+        "desc": "maximum differance between max and min command[1-10]",
+        "section": "Master",
+        "key": "maxstops"
+    },
+  {
+        "type": "bool",
+        "title": "Demo",
+        "desc": "Start Demo Type?",
+        "section": "Master",
+        "key": "test"
+    },
+  {
+        "type": "bool",
+        "title": "Time Travel Priority",
+        "desc": "Time Travel Priority",
+        "section": "Master",
+        "key": "minchngdir"
+    },
+  {
+        "type": "bool",
+        "title": "Filter Move To Elevator",
+        "desc": "Filter Move To Elevator",
+        "section": "Master",
+        "key": "multirequest"
+    },
+  {
+        "type": "bool",
+        "title": "Filter pass Elevators",
+        "desc": "Filter pass Elevators",
+        "section": "Master",
+        "key": "selectcurfloor"
+    },
+  {
+        "type": "bool",
+        "title": "Show All Destination",
+        "desc": "Show All Destination",
+        "section": "Master",
+        "key": "showalldestination"
+    },
+  {
+        "type": "bool",
+        "title": "Reopen Door",
+        "desc": "Reopen Door ",
+        "section": "Master",
+        "key": "reopendoor"
+    },
+  {
+        "type": "bool",
+        "title": "Show Destination On Panel",
+        "desc": "Show Destination On Panel ",
+        "section": "Master",
+        "key": "showdespanel"
+    },
+  {
+        "type": "bool",
+        "title": "Check Capacity",
+        "desc": "Multi Request",
+        "section": "Master",
+        "key": "checkcapacity"
+    }
+
+]

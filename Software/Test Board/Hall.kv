@@ -1,0 +1,246 @@
+
+<HallButton>:
+    background_color: root.colorblack
+    canvas.before:
+        Color:
+            rgba: root.colorwhite if self.Av==1 else root.colordisable
+        Line:
+            width: root.widthline
+            rounded_rectangle: self.x, self.y, self.width, self.height,5
+    text:self.floorname
+    color:root.colorwhite if self.Av==1 else root.colordisable
+    font_size:self.height*0.8
+    opacity:1 if self.show==1 else 0
+    on_press:root.UpdateAvailable()
+
+<HallCallPush>:
+
+
+
+
+    canvas.before:
+        Color:
+            rgba: root.colorborder
+        Line:
+            width: 1
+            points: self.x-290, self.y+self.height, self.x+ self.width, self.y+self.height
+
+
+<HallCallDiv>:
+    cols:2
+    size_hint_y: None
+    height: '150sp'
+
+
+    BoxLayout:
+        orientation:'horizontal'
+        size_hint_x:1.5
+        BoxLayout:
+            orientation:'horizontal'
+            AnchorLayout:
+                anchor_x: 'center'
+                anchor_y: 'center'
+                HallPanels:
+                    floor:root.floor
+                    connection:True
+
+            AnchorLayout:
+
+                anchor_x: 'center'
+                anchor_y: 'center'
+                HallPanels:
+                    floor:root.floor
+                    quality:True
+
+    HallPanels:
+        canvas.before:
+            Color:
+                rgba: root.colorborder
+            Line:
+                width: 1
+                points: self.x-290, self.y+self.height, self.x+ self.width, self.y+self.height
+
+        floor:root.floor
+        config:True
+
+
+<HallDashboard>:
+    on_press:self.Select_Button()
+
+
+
+
+
+<PopupWindow>:
+    rows:1
+    GridLayout:
+        cols:3
+        padding:10
+        Label:
+            size_hint_x:0.2
+        GridLayout:
+            padding:10
+            spacing:10
+            canvas.before:
+                Color:
+                    rgba: root.colorwhite
+                Line:
+                    width: 1.5
+                    rounded_rectangle: self.x, self.y, self.width, self.height,10
+            rows:4
+            GridLayout:
+                cols:3
+                size_hint_y:0.1
+                TextInput:
+                    hint_text:"Hall Index Name"
+                    id:HallIndex
+                TextInput:
+                    hint_text:"Parallel Panel"
+                    id:ParPanel
+                Button:
+                    text:"Config Setup"
+                    on_press:root.Select_Setup()
+
+            PopupElevatorPanel:
+                floor:root.floor
+                parID:root.parID
+                size_hint_y:0.25
+
+            PopupPushButtons:
+                floor:root.floor
+                parID:root.parID
+            PopupIDCARDPanel:
+                floor:root.floor
+                parID:root.parID
+                size_hint_y:0.1
+
+        Label:
+            size_hint_x:0.2
+
+
+
+
+
+<PopupPushButtons>:
+
+    cols:3
+    padding:10
+    spacing:10
+
+
+
+
+
+<PopupElevatorPanel>:
+    padding:10
+    spacing:20
+    cols:3
+    GridLayout:
+        cols:1
+        padding:15
+
+        HallLocation:
+            floor:root.floor
+            parID:root.parID
+            left:True
+    ElevatorPush:
+        size_hint_x:1.5
+        text:""
+
+        disable:True
+        elevatorpanel:True
+        floor:root.floor
+    GridLayout:
+        cols:1
+        padding:15
+
+        HallLocation:
+            parID:root.parID
+            floor:root.floor
+            left:False
+
+
+<ElevatorPush>:
+    source:self.sourcepng
+    on_press:self.Select_Button()
+    Label:
+        text:str(root.Elevatorname) if root.elevatorpanel==1 else ""
+        center_x:self.parent.center_x
+        center_y:self.parent.center_y+35
+        font_size:self.height*0.15
+
+
+
+
+<HallLocation>:
+
+    canvas.before:
+        Color:
+            rgba: root.colorwhite if self.disable==0 else root.colordisable
+        Line:
+            width: 1.5
+            rounded_rectangle: self.x, self.y, self.width, self.height,10
+    on_press:self.Select_Button()
+    source:"raw.png"
+    Label:
+        text:str(root.HallParID) if root.disable==0 else ""
+        center:self.parent.center
+        font_size:self.height*0.5
+
+
+
+<PopupIDCARDPanel>:
+    cols:3
+    PopupIDCARButton:
+        vip:False
+        size_hint_x:1
+    Button:
+        text:"Config ID CARD"
+        on_press:root.Config_Button()
+    PopupIDCARButton:
+        vip:True
+        size_hint_x:1
+
+
+
+
+
+<PopupIDCARButton>:
+    source:self.sourceimage
+    on_press:self.Select_Button()
+
+
+
+
+
+
+
+
+<Hall>:
+    cols:1
+    size_hint_y:  None
+    height: self.minimum_height
+
+
+
+<FloorsLabel>:
+    size_hint_y: None
+    height: '150sp'
+    text:self.floorname
+    font_name:'times.ttf'
+    halign: 'left'
+    valign: 'middle'
+    markup : True
+    font_size:'30sp'
+    canvas.before:
+        Color:
+            rgba: root.colorborder
+        Line:
+            width: 1
+            points: self.x, self.y+self.height, self.x+ self.width, self.y+self.height
+
+
+<Floors>:
+    cols:1
+    size_hint_y: None
+    height: self.minimum_height

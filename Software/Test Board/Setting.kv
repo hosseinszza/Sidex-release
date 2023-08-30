@@ -1,0 +1,49 @@
+<SettingMon>:
+    rows:7
+    spacing:10
+    Config:
+        size_hint_y:0.1
+        source: "ConfigGeneral.PNG"
+
+        configgeneral:1
+    Config:
+        size_hint_y:0.1
+        source:"config2.png"
+        typenum:1
+
+    Config:
+        size_hint_y:0.1
+        source: "config2.png"
+        typenum:2
+    Config:
+        size_hint_y:0.1
+        source: "config2.png"
+        typenum:3
+    Config:
+        size_hint_y:0.1
+        source: "config2.png"
+        typenum:4
+    Config:
+        size_hint_y:0.1
+        source: "config2.png"
+        typenum:5
+
+    Label:
+        text:""
+
+<Config>:
+    id:dddd
+    on_press:app.open_config() if root.configgeneral==1 else root.SelectConfig()
+    on_release:app.open_settings() if root.configgeneral==1 else root.NoTask()
+    Label:
+        text:str(root.typenum) if root.configgeneral==0 else ""
+        center:self.parent.center
+        font_size:self.height/5.5
+
+
+
+
+
+
+
+

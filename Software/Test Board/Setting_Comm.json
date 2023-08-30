@@ -1,0 +1,160 @@
+[
+
+  {
+        "type": "bool",
+        "title": "Internet Communication",
+        "desc": "if use of Internet Communication Set ON",
+        "section": "Master",
+        "key": "internet"
+    },
+  {
+        "type": "string",
+        "title": "Project Name",
+        "desc": "Project Name",
+        "section": "Communication",
+        "key": "PrjName"
+    },
+    {
+        "type": "numeric",
+        "title": "Project Code",
+        "desc": "Project Code [1-65530]",
+        "section": "Master",
+        "key": "elevcode"
+    },
+{
+        "type": "numeric",
+        "title": "Com port",
+        "desc": "Com port number for communucation",
+        "section": "Communication",
+        "key": "com"
+    },
+  {
+        "type": "numeric",
+        "title": "Min Height Floors",
+        "desc": "Min Height Floors in pixel",
+        "section": "Master",
+        "key": "minheight"
+    },
+   {
+        "type": "numeric",
+        "title": "Elevator Number ",
+        "desc": "Elevator Number in project [1-12]",
+        "section": "Master",
+        "key": "elevnum"
+    },
+    {
+        "type": "numeric",
+        "title": "Hall Number ",
+        "desc": "Hall Number in project [1-24]",
+        "section": "Master",
+        "key": "hallnum"
+    },
+   {
+        "type": "numeric",
+        "title": "People Case ",
+        "desc": "People Number for every request [1-25]",
+        "section": "Master",
+        "key": "people"
+    },
+   {
+        "type": "numeric",
+        "title": "Time Rest ",
+        "desc": "Time For opening and closing door and get in passengers in Second [1-120]",
+        "section": "Master",
+        "key": "timerest"
+    },
+   {
+        "type": "numeric",
+        "title": "Speed",
+        "desc": "Speed Traveling in m/s [1-3]",
+        "section": "Master",
+        "key": "speed"
+    }
+   , {
+        "type": "numeric",
+        "title": "Height Floor",
+        "desc": "Height Floor in meter [1-10]",
+        "section": "Master",
+        "key": "height"
+    }
+   ,
+   {
+        "type": "numeric",
+        "title": "Check Time",
+        "desc": "Check Time in ms [5000-50000]",
+        "section": "Master",
+        "key": "checktime"
+    }
+   ,
+     {
+        "type": "numeric",
+        "title": "Max Cnt Request",
+        "desc": "Max Count Request False [1-10]",
+        "section": "Master",
+        "key": "maxcntreq"
+    }
+   ,
+   {
+        "type": "numeric",
+        "title": "Time Wait",
+        "desc": "Time Wait For next command in ms[1000-10000]",
+        "section": "Master",
+        "key": "timewait"
+    },
+   {
+        "type": "numeric",
+        "title": "Trolly Add",
+        "desc": "Trolly Add People [2-6]",
+        "section": "Master",
+        "key": "trolly"
+    },
+  {
+        "type": "numeric",
+        "title": "Stroller Add",
+        "desc": "Stroller Add People [2-4]",
+        "section": "Master",
+        "key": "stroller"
+    },
+  {
+        "type": "numeric",
+        "title": "WheelChair Add",
+        "desc": "WheelChair Add People [2-4]",
+        "section": "Master",
+        "key": "wheelchair"
+    },
+  {
+        "type": "bool",
+        "title": "Permision People Panel",
+        "desc": "If you want Show People Panel in Hall Please ON",
+        "section": "Master",
+        "key": "permpeople"
+    },
+  {
+        "type": "bool",
+        "title": "Permision Cancell Panel",
+        "desc": "If you want Show Cancell Panel in Hall Please ON",
+        "section": "Master",
+        "key": "permcancell"
+    },
+  {
+        "type": "bool",
+        "title": "Crowded Place",
+        "desc": "If your place has High traffic set ON",
+        "section": "Master",
+        "key": "crowded"
+    },
+  {
+        "type": "numeric",
+        "title": "Max Cnt Hall False (Connection)",
+        "desc": "Max Cnt False For Hall Connection [50-400]",
+        "section": "Master",
+        "key": "maxcntfalse"
+    },
+  {
+        "type": "numeric",
+        "title": "Time Show Hall ",
+        "desc": "Time for show index elevator in second[2,20]",
+        "section": "Master",
+        "key": "timeshow"
+    }
+]

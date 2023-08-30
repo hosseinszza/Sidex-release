@@ -1,0 +1,292 @@
+<InfoPanel>:
+
+    spacing:20
+    rows:2
+    TravelingPanel:
+
+        rows:2
+    AlarmPanel:
+        size_hint_y:0.5
+        rows:2
+
+
+
+
+
+
+
+<TravelingPanel>:
+    box1:box1
+    box2:box2
+    box3:box3
+    box4:box4
+    box5:box5
+
+
+    Label:
+        size_hint_y:0.06
+        canvas.before:
+            Color:
+                rgba: root.colorborder
+            Line:
+                width: 1
+                rectangle: self.x, self.y, self.width, self.height
+        canvas:
+            Color:
+                rgba: root.colorback
+            Rectangle:
+                pos: self.pos
+                size: self.size
+        text:"Passenger View"
+        font_name:'times.ttf'
+        font_size:self.height*0.75
+        markup: True
+        halign: 'left'
+        valign: 'middle'
+    GridLayout:
+        rows:2
+        canvas.before:
+            Color:
+                rgba: root.colorborder
+            Line:
+                width: 1
+                rectangle: self.x, self.y, self.width, self.height
+        GridLayout:
+            cols:5
+            size_hint_y:0.08
+            Label:
+                size_hint_x:1.4
+                canvas.before:
+                    Color:
+                        rgba: root.colorborder
+                    Line:
+                        width: 1
+                        rectangle: self.x, self.y, self.width, self.height
+                text:"Status"
+                font_name:'times.ttf'
+                font_size:self.width*0.2
+
+                halign: 'left'
+                valign: 'middle'
+
+            Label:
+                canvas.before:
+                    Color:
+                        rgba: root.colorborder
+                    Line:
+                        width: 1
+                        rectangle: self.x, self.y, self.width, self.height
+                text:"Start"
+                font_name:'times.ttf'
+                font_size:self.width*0.25
+
+                halign: 'left'
+                valign: 'middle'
+            Label:
+                canvas.before:
+                    Color:
+                        rgba: root.colorborder
+                    Line:
+                        width: 1
+                        rectangle: self.x, self.y, self.width, self.height
+                text:"End"
+                font_name:'times.ttf'
+                font_size:self.width*0.25
+
+                halign: 'left'
+                valign: 'middle'
+            Label:
+                canvas.before:
+                    Color:
+                        rgba: root.colorborder
+                    Line:
+                        width: 1
+                        rectangle: self.x, self.y, self.width, self.height
+                text:"Time"
+                font_name:'times.ttf'
+                font_size:self.width*0.25
+
+                halign: 'left'
+                valign: 'middle'
+            Label:
+                canvas.before:
+                    Color:
+                        rgba: root.colorborder
+                    Line:
+                        width: 1
+                        rectangle: self.x, self.y, self.width, self.height
+                text:"Elevator"
+                font_name:'times.ttf'
+                font_size:self.width*0.25
+
+                halign: 'left'
+                valign: 'middle'
+
+        GridLayout:
+            cols:5
+            BoxLayout:
+                size_hint_x:1.4
+                orientation:'vertical'
+                id:box1
+                canvas.before:
+                    Color:
+                        rgba: root.colorborder
+                    Line:
+                        width: 1
+                        rectangle: self.x, self.y, self.width, self.height
+            BoxLayout:
+                orientation:'vertical'
+                id:box2
+                canvas.before:
+                    Color:
+                        rgba: root.colorborder
+                    Line:
+                        width: 1
+                        rectangle: self.x, self.y, self.width, self.height
+            BoxLayout:
+                orientation:'vertical'
+                id:box3
+                canvas.before:
+                    Color:
+                        rgba: root.colorborder
+                    Line:
+                        width: 1
+                        rectangle: self.x, self.y, self.width, self.height
+            BoxLayout:
+                orientation:'vertical'
+                id:box4
+                canvas.before:
+                    Color:
+                        rgba: root.colorborder
+                    Line:
+                        width: 1
+                        rectangle: self.x, self.y, self.width, self.height
+            BoxLayout:
+                orientation:'vertical'
+                id:box5
+                canvas.before:
+                    Color:
+                        rgba: root.colorborder
+                    Line:
+                        width: 1
+                        rectangle: self.x, self.y, self.width, self.height
+
+
+
+
+
+<BoxsLabel>:
+    text:""
+
+
+
+<AlarmPanel>:
+    rows:2
+    box1:box1
+    box2:box2
+    box3:box3
+    Label:
+        size_hint_y:0.12
+        canvas.before:
+            Color:
+                rgba: root.colorborder
+            Line:
+                width: 1
+                rectangle: self.x, self.y, self.width, self.height
+        canvas:
+            Color:
+                rgba: root.colorback
+            Rectangle:
+                pos: self.pos
+                size: self.size
+        text:"Alarm"
+        font_name:'times.ttf'
+        font_size:self.height*0.75
+        markup: True
+        halign: 'left'
+        valign: 'middle'
+    GridLayout:
+        rows:2
+        canvas.before:
+            Color:
+                rgba: root.colorborder
+            Line:
+                width: 1
+                rectangle: self.x, self.y, self.width, self.height
+        GridLayout:
+            cols:3
+            size_hint_y:0.16
+            Label:
+                size_hint_x:0.6
+                canvas.before:
+                    Color:
+                        rgba: root.colorborder
+                    Line:
+                        width: 1
+                        rectangle: self.x, self.y, self.width, self.height
+                text:"Code"
+                font_name:'times.ttf'
+                font_size:self.width*0.3
+
+                halign: 'left'
+                valign: 'middle'
+
+            Label:
+                canvas.before:
+                    Color:
+                        rgba: root.colorborder
+                    Line:
+                        width: 1
+                        rectangle: self.x, self.y, self.width, self.height
+                text:"Board"
+                font_name:'times.ttf'
+                font_size:self.width*0.2
+
+                halign: 'left'
+                valign: 'middle'
+            Label:
+                size_hint_x:1.3
+                canvas.before:
+                    Color:
+                        rgba: root.colorborder
+                    Line:
+                        width: 1
+                        rectangle: self.x, self.y, self.width, self.height
+                text:"Description"
+                font_name:'times.ttf'
+                font_size:self.width*0.15
+
+                halign: 'left'
+                valign: 'middle'
+
+        GridLayout:
+            cols:3
+            BoxLayout:
+                size_hint_x:0.6
+                orientation:'vertical'
+                id:box1
+                canvas.before:
+                    Color:
+                        rgba: root.colorborder
+                    Line:
+                        width: 1
+                        rectangle: self.x, self.y, self.width, self.height
+            BoxLayout:
+                orientation:'vertical'
+                id:box2
+                canvas.before:
+                    Color:
+                        rgba: root.colorborder
+                    Line:
+                        width: 1
+                        rectangle: self.x, self.y, self.width, self.height
+            BoxLayout:
+                size_hint_x:1.3
+                orientation:'vertical'
+                id:box3
+                canvas.before:
+                    Color:
+                        rgba: root.colorborder
+                    Line:
+                        width: 1
+                        rectangle: self.x, self.y, self.width, self.height
